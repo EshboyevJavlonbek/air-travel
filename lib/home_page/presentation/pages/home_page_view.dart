@@ -1,15 +1,21 @@
+import 'package:air_travel/home_page/presentation/pages/home_page_view_model.dart';
+import 'package:air_travel/home_page/presentation/widgets/bottom_navigation_barr.dart';
+import 'package:air_travel/home_page/presentation/widgets/main_discount/discount.dart';
+import 'package:air_travel/home_page/presentation/widgets/offer_items.dart';
 import 'package:air_travel/home_page/presentation/widgets/popular_places.dart';
 import 'package:air_travel/home_page/presentation/widgets/search_item.dart';
-import 'package:air_travel/home_page/presentation/widgets/topics.dart';
-import 'package:air_travel/home_page/presentation/widgets/main_discount/discount.dart';
 import 'package:air_travel/home_page/presentation/widgets/tour_pack_item/tour_package_item.dart';
 import 'package:flutter/material.dart';
 
-import 'bottom_navigation_barr.dart';
-import 'offer_items.dart';
+import '../widgets/tour_pack_item/topics.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePageView extends StatelessWidget {
+  const HomePageView({
+    super.key,
+    required this.viewModel,
+  });
+
+  final HomePageViewModel viewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -47,5 +53,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

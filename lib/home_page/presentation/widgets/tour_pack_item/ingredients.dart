@@ -33,8 +33,7 @@ class Ingredients extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               "assets/icons/tick.svg",
-              width: 9.5,
-              height: 7,
+              fit: BoxFit.none,
             ),
           ),
           SizedBox(width: 3),

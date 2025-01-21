@@ -1,3 +1,4 @@
+import 'package:air_travel/home_page/presentation/widgets/popular_places_item.dart';
 import 'package:flutter/material.dart';
 
 class PopularPlaces extends StatelessWidget {
@@ -19,41 +20,18 @@ class PopularPlaces extends StatelessWidget {
           SizedBox(width: 10),
           PopularPlacesItem(title: "Malayzia", image: "assets/images/places/malayziya.png"),
           SizedBox(width: 10),
-          PopularPlacesItem(title: "Dubai", image: "assets/images/places/dubai.png")
+          PopularPlacesItem(title: "Dubai", image: "assets/images/places/dubai.png"),
+          SizedBox(width: 10),
+          PopularPlacesItem(title: "Paris", image: "assets/images/places/paris.png"),
+          SizedBox(width: 10),
+          PopularPlacesItem(title: "Makka", image: "assets/images/places/makka.png"),
+          SizedBox(width: 10),
+          PopularPlacesItem(title: "Malayzia", image: "assets/images/places/malayziya.png"),
+          SizedBox(width: 10),
+          PopularPlacesItem(title: "Dubai", image: "assets/images/places/dubai.png"),
         ],
       ),
     );
   }
 }
 
-class PopularPlacesItem extends StatelessWidget {
-  const PopularPlacesItem(
-      {super.key, required this.title, required this.image});
-
-  final String title, image;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image(
-            image: AssetImage(image),
-            width: 104,
-            height: 52,
-          ),
-        ),
-        Text(
-          title,
-          style: TextStyle(
-            color: Color(0xFFFFFFFF),
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
-        ),
-      ],
-    );
-  }
-}
