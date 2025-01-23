@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ShrineItem extends StatelessWidget {
   const ShrineItem({
@@ -77,17 +78,57 @@ class ShrineItem extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Text(
-                    """Arafot — Makkadan 20 km
-                     uzoqlikda joylashgan, 11 — 12 km
-                     va kengligi 6,5 km boʻlgan vodiy...""",
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 8,
-                      fontWeight: FontWeight.w700,
+                  Container(
+                    color: Colors.white,
+                    width: 150,
+                    child: Text(
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                      "Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 8,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 28,
+                        height: 1,
+                        color: Colors.black,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        width: 16,
+                        height: 16,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color(0xFF069C57),
+                            width: 1,
+                          )
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 12,
+                          height: 12,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xFF3BB77E),
+                          ),
+                          child: SvgPicture.asset("assets/icons/down-arrow.svg", fit: BoxFit.none),
+                        ),
+                      ),
+                      Container(
+                        width: 28,
+                        height: 1,
+                        color: Colors.black,
+                      ),
+                    ],
+                  )
                 ],
               )
             ],

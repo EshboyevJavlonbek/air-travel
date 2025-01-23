@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HotelItem extends StatelessWidget {
   const HotelItem({
@@ -77,17 +78,56 @@ class HotelItem extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Text(
-                    maxLines: 3,
-                    """New Madinah mehmonxonasining
-                     har bir xonasida vanna va xalat
-                     bilan jihozlangan shaxsiy ... """,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 8,
-                      fontWeight: FontWeight.w700,
+                  Container(
+                    width: 150,
+                    color: Colors.white,
+                    child: Text(
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                      "New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ...",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 8,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  )
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 28,
+                        height: 1,
+                        color: Colors.black,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        width: 16,
+                        height: 16,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Color(0xFF069C57),
+                              width: 1,
+                            )
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 12,
+                          height: 12,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xFF3BB77E),
+                          ),
+                          child: SvgPicture.asset("assets/icons/down-arrow.svg", fit: BoxFit.none),
+                        ),
+                      ),
+                      Container(
+                        width: 28,
+                        height: 1,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
                 ],
               )
             ],

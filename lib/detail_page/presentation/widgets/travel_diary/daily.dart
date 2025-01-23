@@ -3,6 +3,7 @@ import 'package:air_travel/detail_page/presentation/widgets/travel_diary/flight_
 import 'package:air_travel/detail_page/presentation/widgets/travel_diary/hotel_item.dart';
 import 'package:air_travel/detail_page/presentation/widgets/travel_diary/shrine_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Daily extends StatelessWidget {
   const Daily({super.key});
@@ -43,11 +44,74 @@ class Daily extends StatelessWidget {
           Column(
             children: [
               SizedBox(height: 30),
-              FlightItem(from: "Toshkent", to: "Madina", hour: "8:30 am"),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  FlightItem(from: "Toshkent", to: "Madina", hour: "8:30 am"),
+                  Positioned(
+                    top: 14,
+                    left: -26,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 51,
+                      height: 53,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF3BB77E),
+                          borderRadius: BorderRadius.circular(100)),
+                      child: SvgPicture.asset(
+                        "assets/icons/plane.svg",
+                        fit: BoxFit.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 30),
-              HotelItem(hour: "11:30 am"),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  HotelItem(hour: "11:30 am"),
+                  Positioned(
+                    top: 14,
+                    left: -26,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 51,
+                      height: 53,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF3BB77E),
+                          borderRadius: BorderRadius.circular(100)),
+                      child: SvgPicture.asset(
+                        "assets/icons/hotel.svg",
+                        fit: BoxFit.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 30),
-              ShrineItem(hour: "8:30 am"),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  ShrineItem(hour: "8:30 am"),
+                  Positioned(
+                    top: 14,
+                    left: -26,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 51,
+                      height: 53,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF3BB77E),
+                          borderRadius: BorderRadius.circular(100)),
+                      child: SvgPicture.asset(
+                        "assets/icons/ziyoratgoh.svg",
+                        fit: BoxFit.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 30),
             ],
           ),

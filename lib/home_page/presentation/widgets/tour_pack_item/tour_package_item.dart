@@ -58,15 +58,18 @@ class TourPackageItem extends StatelessWidget {
           ),
           SizedBox(height: 5),
           Topics(title: "Tariflar"),
-          Expanded(
-            child: SizedBox(
-              height: 149,
-              child: ListView(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
+          SizedBox(height: 10),
+          Container(
+            height: 127,
+            color: Colors.white,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 children: [
                   Tariff(title: "Ekonom", price1: "1200\$", price2: "1300\$"),
+                  SizedBox(width: 10),
                   Tariff(title: "Standart", price1: "1400\$", price2: "1600\$"),
+                  SizedBox(width: 10),
                   Tariff(title: "Premium", price1: "1800\$", price2: "2000\$"),
                 ],
               ),

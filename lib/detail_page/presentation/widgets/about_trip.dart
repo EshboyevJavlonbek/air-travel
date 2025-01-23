@@ -38,6 +38,8 @@ class AboutTrip extends StatelessWidget {
             ),
           ),
           Text(
+            maxLines: 3,
+            overflow: TextOverflow.visible,
             description,
             style: TextStyle(
               color: Color(0xFF4B4B4B),
