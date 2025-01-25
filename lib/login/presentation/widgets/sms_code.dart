@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pinput/pinput.dart';
 
-class PinCode extends StatelessWidget {
-  const PinCode({super.key});
+class SmsCode extends StatelessWidget {
+  const SmsCode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,20 +62,23 @@ class PinCode extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        alignment: Alignment.center,
-        width: 380,
-        height: 58,
-        decoration: BoxDecoration(
-          color: Color(0xFF3BB77E),
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: Text(
-          "Tasdiqlash",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          alignment: Alignment.center,
+          width: 380,
+          height: 58,
+          decoration: BoxDecoration(
+            color: Color(0xFF3BB77E),
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: Text(
+            "Tasdiqlash",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ),

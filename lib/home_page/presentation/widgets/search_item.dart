@@ -32,14 +32,13 @@ class SearchItem extends StatelessWidget {
                 decoration: BoxDecoration(color: Color(0xFFF5F5F5)),
                 child: TextField(
                   decoration: InputDecoration(
-                    label: Text(
-                      "Search",
-                      style: TextStyle(
-                        color: Color(0xFFBDBDBD),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                    hintText: "Search",
+                    hintStyle: TextStyle(
+                      color: Color(0xFFBDBDBD),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
+                    border: InputBorder.none
                   ),
                 ),
               ),

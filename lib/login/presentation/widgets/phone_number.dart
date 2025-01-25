@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PhoneNumber extends StatelessWidget {
+class PhoneNumber extends StatefulWidget {
   const PhoneNumber({super.key});
 
+  @override
+  State<PhoneNumber> createState() => _PhoneNumberState();
+}
+
+class _PhoneNumberState extends State<PhoneNumber> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +22,9 @@ class PhoneNumber extends StatelessWidget {
         ),
       ),
       body: Column(
+        spacing: 30,
         children: [
-          SizedBox(height: 30),
           Image.asset("assets/myassets/flutter.png"),
-          SizedBox(height: 30),
           Text(
             "Ro'yxatdan o'tish",
             style: TextStyle(
@@ -29,9 +33,9 @@ class PhoneNumber extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: 50),
           Center(
             child: Column(
+              spacing: 30,
               children: [
                 SizedBox(
                   width: 380,
@@ -48,7 +52,6 @@ class PhoneNumber extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
                 Container(
                   alignment: Alignment.center,
                   width: 380,
