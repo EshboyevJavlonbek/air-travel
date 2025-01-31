@@ -1,68 +1,28 @@
 class ApiClient {
   Future<List<dynamic>> fetchSpecialOffers() async {
     return [
+      {'id': 8, 'image': 'assets/images/offers/offers_8.jpg', 'order': 8},
       {'id': 1, 'image': 'assets/images/offers/offers_1.jpg', 'order': 1},
+      {'id': 9, 'image': 'assets/images/offers/offers_9.jpg', 'order': 9},
+      {'id': 6, 'image': 'assets/images/offers/offers_6.jpg', 'order': 6},
       {'id': 2, 'image': 'assets/images/offers/offers_2.jpg', 'order': 2},
       {'id': 3, 'image': 'assets/images/offers/offers_3.jpg', 'order': 3},
       {'id': 4, 'image': 'assets/images/offers/offers_4.jpg', 'order': 4},
       {'id': 5, 'image': 'assets/images/offers/offers_5.jpg', 'order': 5},
-      {'id': 6, 'image': 'assets/images/offers/offers_6.jpg', 'order': 6},
       {'id': 7, 'image': 'assets/images/offers/offers_7.jpg', 'order': 7},
-      {'id': 8, 'image': 'assets/images/offers/offers_8.jpg', 'order': 8},
-      {'id': 9, 'image': 'assets/images/offers/offers_9.jpg', 'order': 9},
     ];
   }
 
   Future<List<dynamic>> fetchPopularPlaces() async {
     return [
-      {
-        'id': 1,
-        'title': 'Parij',
-        'image': 'assets/images/places/paris.png',
-        'order': 2
-      },
-      {
-        'id': 2,
-        'title': 'Makka',
-        'image': 'assets/images/places/makka.png',
-        'order': 1
-      },
-      {
-        'id': 3,
-        'title': 'Malayziya',
-        'image': 'assets/images/places/malayziya.png',
-        'order': 3
-      },
-      {
-        'id': 4,
-        'title': 'Dubay',
-        'image': 'assets/images/places/dubai.png',
-        'order': 4
-      },
-      {
-        'id': 5,
-        'title': 'Parij',
-        'image': 'assets/images/places/paris.png',
-        'order': 5
-      },
-      {
-        'id': 6,
-        'title': 'Makka',
-        'image': 'assets/images/places/makka.png',
-        'order': 6
-      },
-      {
-        'id': 7,
-        'title': 'Malayziya',
-        'image': 'assets/images/places/malayziya.png',
-        'order': 7
-      },
-      {
-        'id': 8,
-        'title': 'Dubay',
-        'image': 'assets/images/places/dubai.png',
-        'order': 8
-      },
+      {'id': 1, 'title': 'Parij', 'image': 'assets/images/places/paris.png', 'order': 1},
+      {'id': 2, 'title': 'Makka', 'image': 'assets/images/places/makka.png', 'order': 2},
+      {'id': 3, 'title': 'Malayziya', 'image': 'assets/images/places/malayziya.png', 'order': 3},
+      {'id': 4, 'title': 'Dubay', 'image': 'assets/images/places/dubai.png', 'order': 4},
+      {'id': 5, 'title': 'Parij', 'image': 'assets/images/places/paris.png', 'order': 5},
+      {'id': 6, 'title': 'Makka', 'image': 'assets/images/places/makka.png', 'order': 6},
+      {'id': 7, 'title': 'Malayziya', 'image': 'assets/images/places/malayziya.png', 'order': 7},
+      {'id': 8, 'title': 'Dubay', 'image': 'assets/images/places/dubai.png', 'order': 8},
     ];
   }
 
@@ -70,9 +30,8 @@ class ApiClient {
     return {
       'id': 1,
       'title': 'Umra Safari',
-      'description':
-          'Viza, Aviachiptalar, Transferlar, Mehmonxonalar (4 va 5 yulduzli), Ovqat'
-              ' (2 mahal milliy taom), Ekskursiyalar, Transport xizmati, Zamzam suvi (5 litr)',
+      'description': 'Viza, Aviachiptalar, Transferlar, Mehmonxonalar (4 va 5 yulduzli), Ovqat'
+          ' (2 mahal milliy taom), Ekskursiyalar, Transport xizmati, Zamzam suvi (5 litr)',
       'images': [
         'assets/images/offers/offers_1.jpg',
         'assets/images/offers/offers_2.jpg',
@@ -221,25 +180,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },
@@ -249,25 +209,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },
@@ -277,25 +238,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },
@@ -305,25 +267,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },
@@ -333,25 +296,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },
@@ -361,25 +325,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },
@@ -389,25 +354,26 @@ class ApiClient {
             {
               'type': 'flight',
               'title': 'Uchish',
+              'image': null,
               'time': '8:30',
-              'from': 'Toshkent',
-              'to': 'Madina',
+              'field_1': 'Toshkent',
+              'field_2': 'Madina',
             },
             {
               'type': 'housing',
               'title': 'Mehmonxona',
+              'image': 'assets/images/places/malayziya.png',
               'time': '11:30',
-              'hotel_name': 'New Madina Hotel',
-              'description':
-                  'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
+              'field_1': 'New Madina Hotel',
+              'field_2': 'New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ',
             },
             {
               'type': 'visit',
               'title': 'Ziyoratgoh',
+              'image': 'assets/images/places/malayziya.png',
               'time': '8:30',
-              'place_name': 'Arofat tog\'i',
-              'description':
-                  'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
+              'field_1': 'Arofat tog\'i',
+              'field_2': 'Arafot — Makkadan 20 km uzoqlikda joylashgan, 11 — 12 km va kengligi 6,5 km boʻlgan vodiy...',
             },
           ]
         },

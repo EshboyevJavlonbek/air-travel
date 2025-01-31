@@ -1,19 +1,29 @@
-import 'package:air_travel/home_page/data/models/home_page_model.dart';
-import 'package:air_travel/home_page/data/repositories/hom_page_repository.dart';
-import 'package:flutter/material.dart';
+import 'package:air_travel/home_page/data/models/special_offers_model.dart';
+
+import 'package:flutter/cupertino.dart';
+
+import '../../data/models/popular_places_model.dart';
+import '../../data/repositories/popular_places_repository.dart';
+import '../../data/repositories/special_offer_repository.dart';
 
 class HomePageViewModel extends ChangeNotifier {
-  HomePageViewModel({required HomePageRepository repo}) : _repo = repo {
+  HomePageViewModel({
+    required SpecialOffersRepository specOffRepo,
+    required PopularPlacesRepository popPlaceRepo,
+  })  : _specOffRepo = specOffRepo,
+        _popPlaceRepo = popPlaceRepo {
     load();
   }
 
-  final HomePageRepository _repo;
+  final SpecialOffersRepository _specOffRepo;
+  final PopularPlacesRepository _popPlaceRepo;
 
-  List<HomePageModel> homepage = [];
-  HomePageModel? mainHomePage;
+  List<SpecialOfferModel> specialOffers = [];
+  List<PopularPlacesModel> popularPlaces = [];
 
   Future<void> load() async{
-    homepage = await _repo.fetchHomePage();
+    specialOffers = await _specOffRepo.fetchSpecialOffers();
+    popularPlaces = await _popPlaceRepo.fetchPopularPlaces();
     notifyListeners();
   }
 }

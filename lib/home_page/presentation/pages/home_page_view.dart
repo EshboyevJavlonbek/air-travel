@@ -1,13 +1,13 @@
 import 'package:air_travel/home_page/presentation/pages/home_page_view_model.dart';
 import 'package:air_travel/home_page/presentation/widgets/bottom_navigation_barr.dart';
-import 'package:air_travel/home_page/presentation/widgets/main_discount/discount.dart';
-import 'package:air_travel/home_page/presentation/widgets/offer_items.dart';
-import 'package:air_travel/home_page/presentation/widgets/popular_places.dart';
-import 'package:air_travel/home_page/presentation/widgets/search_item.dart';
-import 'package:air_travel/home_page/presentation/widgets/tour_pack_item/tour_package_item.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/tour_pack_item/topics.dart';
+import '../widgets/main_discount/discount.dart';
+import '../widgets/offer_items.dart';
+import '../widgets/popular_places.dart';
+import '../widgets/search_item.dart';
+import '../widgets/topics.dart';
+import '../widgets/tour_pack_item/tour_package_item.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({
@@ -20,34 +20,39 @@ class HomePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      extendBody: true,
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SearchItem(),
-                SizedBox(height: 15),
-                OfferItems(),
-                SizedBox(height: 15),
-                Topics(title: "Mashhur Joylar"),
-                SizedBox(height: 15),
-                PopularPlaces(),
-                SizedBox(height: 15),
-              ],
+      body: ListenableBuilder(
+        listenable: viewModel,
+        builder: (context, _) => ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SearchItem(),
+                  SizedBox(height: 15),
+                  OfferItems(),
+                  SizedBox(height: 15),
+                  Topics(title: "Mashhur Joylar"),
+                  SizedBox(height: 15),
+                  PopularPlaces(),
+                  SizedBox(height: 15),
+                ],
+              ),
             ),
-          ),
-          Discount(),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(top: 10,left: 55, right: 55,),
-            child: TourPackageItem(),
-          ),
-        ],
+            Discount(),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 10,
+                left: 55,
+                right: 55,
+              ),
+              child: TourPackageItem(),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavBar(),
     );
