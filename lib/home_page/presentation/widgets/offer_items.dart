@@ -1,111 +1,101 @@
 import 'package:flutter/material.dart';
 
-class OfferItems extends StatelessWidget {
-  const OfferItems({super.key});
+import '../../data/models/special_offers_model.dart';
+
+class SpecialOffers extends StatefulWidget {
+  const SpecialOffers({
+    super.key,
+    required this.specialOffers,
+  });
+
+  final List<SpecialOfferModel> specialOffers;
+
+  @override
+  State<SpecialOffers> createState() => _SpecialOffersState();
+}
+
+class _SpecialOffersState extends State<SpecialOffers> {
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 380,
-      height: 120,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade300,
+    return Center(
+      child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            blurRadius: 60,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: PageView(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage(
-                "assets/images/offers/offers_1.jpg",
+        child: SizedBox(
+          width: 380 ,
+          height: 120 ,
+          child: Stack(
+            children: [
+              PageView.builder(
+                onPageChanged: (index) {
+                  currentIndex = index % widget.specialOffers.length;
+                  setState(() {});
+                },
+                itemBuilder: (context, index) {
+                  final actualIndex = index % widget.specialOffers.length;
+                  return Image.asset(
+                    widget.specialOffers[actualIndex].image,
+                    fit: BoxFit.cover,
+                  );
+                },
               ),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
+              IndexIndicatorContainer(
+                length: widget.specialOffers.length,
+                currentIndex: currentIndex,
+              ),
+            ],
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_2.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_3.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_4.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_5.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_6.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_7.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_8.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage("assets/images/offers/offers_9.jpg"),
-              width: 380,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
+
+class IndexIndicatorContainer extends StatelessWidget {
+  const IndexIndicatorContainer({
+    super.key,
+    required this.length,
+    required this.currentIndex,
+  });
+
+  final int length;
+  final int currentIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      bottom: 12,
+      left: 0,
+      right: 0,
+      child: Center(
+        child: Container(
+          height: 8,
+          padding: const EdgeInsets.symmetric(horizontal: 3),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.min,
+            spacing: 3,
+            children: List<Widget>.generate(
+              length,
+                  (index) => AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                width: index == currentIndex ? 16 : 4,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: index == currentIndex ? Colors.greenAccent : Colors.grey,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+

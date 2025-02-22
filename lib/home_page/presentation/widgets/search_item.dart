@@ -11,7 +11,6 @@ class SearchItem extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.only(right: 20, left: 20),
-          width: 326,
           height: 53,
           decoration: BoxDecoration(
             color: Color(0xFFF5F5F5),
@@ -20,26 +19,17 @@ class SearchItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SvgPicture.asset(
-                "assets/icons/search.svg",
-                width: 16,
-                height: 16,
-
-              ),
-              Container(
-                width: 222,
-                height: 20,
-                decoration: BoxDecoration(color: Color(0xFFF5F5F5)),
+              SvgPicture.asset("assets/icons/search.svg"),
+              Expanded(
                 child: TextField(
                   decoration: InputDecoration(
-                    hintText: "Search",
-                    hintStyle: TextStyle(
-                      color: Color(0xFFBDBDBD),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    border: InputBorder.none
-                  ),
+                      hintText: "Search",
+                      hintStyle: TextStyle(
+                        color: Color(0xFFBDBDBD),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      border: InputBorder.none),
                 ),
               ),
               SvgPicture.asset(

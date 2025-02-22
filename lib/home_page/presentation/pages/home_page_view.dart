@@ -32,7 +32,7 @@ class HomePageView extends StatelessWidget {
                 children: [
                   SearchItem(),
                   SizedBox(height: 15),
-                  OfferItems(),
+                  SpecialOffers(specialOffers: viewModel.specialOffers),
                   SizedBox(height: 15),
                   Topics(title: "Mashhur Joylar"),
                   SizedBox(height: 15),

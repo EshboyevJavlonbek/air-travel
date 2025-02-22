@@ -1,3 +1,4 @@
+import 'package:air_travel/detail_page/presentation/widgets/detail_page.dart';
 import 'package:air_travel/login/presentation/widgets/full_information.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class AirTravel extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FullInformation(),
+      home: DetailPage(),
     );
   }
 }
